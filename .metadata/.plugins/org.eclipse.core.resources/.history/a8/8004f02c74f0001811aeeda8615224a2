@@ -1,0 +1,17 @@
+package edu.umd.intership.service;
+
+import java.util.Arrays;
+import java.util.List;
+
+import edu.umd.intership.model.JobPosting;
+
+public class JobPostingService {
+
+	private List<JobPosting> jobPostingList = Arrays.asList(new JobPosting("JP01", "C01", "JPMC", "BA", "CA",
+			"Analyst", "2-3y", "All", "Bachelors", "NA",
+			100000, new java.util.Date(System.currentTimeMillis()), new java.util.Date(System.currentTimeMillis()), "HM01"));
+	
+	public List<JobPosting> getAllJobPostings(){
+		return jobPostingList;
+	}
+}

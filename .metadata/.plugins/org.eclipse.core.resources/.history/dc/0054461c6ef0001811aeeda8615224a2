@@ -1,0 +1,29 @@
+package edu.umd.intership.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HiringManagerController {
+
+	@RequestMapping("/createHiringManagerProfile")
+	public String createHiringManagerProfile() {
+		return "Success";
+	}
+	
+	@RequestMapping("/updateHiringManagerProfile")
+	public String updateHiringManagerProfile() {
+		return "Success";
+	}
+	
+	@RequestMapping("/deleteHiringManagerProfile")
+	public String deleteHiringManagerProfile() {
+		return "Success";
+	}
+	
+	@RequestMapping("/fetchHiringManagerProfile")
+	public String fetchHiringManagerProfile() {
+		return "Success";
+	}
+	
+}

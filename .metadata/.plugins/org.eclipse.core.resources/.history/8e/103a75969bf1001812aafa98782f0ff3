@@ -1,0 +1,144 @@
+package edu.umd.intership.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="hiringmanager")
+public class HiringManager{
+
+	@Id
+	@Column(name="")
+	private String empId;
+	@Column(name="")
+	private String empFirstName;
+	@Column(name="")
+	private String empLastName;
+	@Column(name="")
+	private String departmentName;
+	@Column(name="")
+	private String designation;
+	@Column(name="")
+	private String empEmail;
+	@Column(name="")
+	private String empPhoneNo;
+	@Column(name="")
+	private String empLocation;
+	@Column(name="")
+	private String companyID;
+	@Column(name="")
+	private String companyName;
+	@Column(name="")
+	private String userId;
+
+	public HiringManager() {
+	}
+
+	public HiringManager(String empId, String empFirstName, String empLastName, String departmentName,
+			String designation, String empEmail, String empPhoneNo, String empLocation, String companyID,
+			String companyName, String userId) {
+		super();
+		this.empId = empId;
+		this.empFirstName = empFirstName;
+		this.empLastName = empLastName;
+		this.departmentName = departmentName;
+		this.designation = designation;
+		this.empEmail = empEmail;
+		this.empPhoneNo = empPhoneNo;
+		this.empLocation = empLocation;
+		this.companyID = companyID;
+		this.companyName = companyName;
+		this.userId = userId;
+	}
+
+	public String getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(String empId) {
+		this.empId = empId;
+	}
+
+	public String getEmpFirstName() {
+		return empFirstName;
+	}
+
+	public void setEmpFirstName(String empFirstName) {
+		this.empFirstName = empFirstName;
+	}
+
+	public String getEmpLastName() {
+		return empLastName;
+	}
+
+	public void setEmpLastName(String empLastName) {
+		this.empLastName = empLastName;
+	}
+
+	public String getDepartmentName() {
+		return departmentName;
+	}
+
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+
+	public String getEmpEmail() {
+		return empEmail;
+	}
+
+	public void setEmpEmail(String empEmail) {
+		this.empEmail = empEmail;
+	}
+
+	public String getEmpPhoneNo() {
+		return empPhoneNo;
+	}
+
+	public void setEmpPhoneNo(String empPhoneNo) {
+		this.empPhoneNo = empPhoneNo;
+	}
+
+	public String getEmpLocation() {
+		return empLocation;
+	}
+
+	public void setEmpLocation(String empLocation) {
+		this.empLocation = empLocation;
+	}
+
+	public String getCompanyID() {
+		return companyID;
+	}
+
+	public void setCompanyID(String companyID) {
+		this.companyID = companyID;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+}

@@ -1,0 +1,14 @@
+package edu.umd.intership.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+
+	
+	public boolean login(String username, String password) {
+		if(username.equals(password))
+			return true;
+		return false;
+	}
+}

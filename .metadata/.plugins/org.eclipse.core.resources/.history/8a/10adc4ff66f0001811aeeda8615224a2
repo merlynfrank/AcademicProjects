@@ -1,0 +1,6 @@
+package edu.umd.intership.controller;
+
+@RequestController
+public class UserController {
+
+}

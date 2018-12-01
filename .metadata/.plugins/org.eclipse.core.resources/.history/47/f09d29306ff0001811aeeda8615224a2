@@ -1,0 +1,38 @@
+package edu.umd.intership.controller;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import edu.umd.intership.model.HiringManagers;
+
+@RestController
+public class EventRegistrationController {
+	
+	@RequestMapping("/createEventRegistration")
+	public String createEventRegistration() {
+		return "Success";
+	}
+	
+	@RequestMapping("/updateEventRegistration")
+	public String updateEventRegistration() {
+		return "Success";
+	}
+	
+	@RequestMapping("/deleteEventRegistration")
+	public String deleteEventRegistration() {
+		return "Success";
+	}
+	
+	@RequestMapping("/fetchEventRegistration")
+	public String fetchEventRegistration() {
+		return "Success";
+	}
+	
+	@RequestMapping("/EventRegistrations")
+	public List<EventRegistration> getAllEventRegistrations() {
+		return Arrays.asList(new EventRegistration());
+	}
+}

@@ -1,0 +1,66 @@
+package edu.umd.intership.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import edu.umd.intership.form.LoginForm;
+import edu.umd.intership.model.JobPosting;
+import edu.umd.intership.model.User;
+import edu.umd.intership.service.JobPostingService;
+
+
+@RestController
+public class JobPostingController {
+
+	@Autowired
+	private JobPostingService jobPostingService;
+
+	@RequestMapping("/createJobPosting")
+	public String createJobPosting() {
+		return "Success";
+	}
+
+	@RequestMapping("/updateJobPosting")
+	public String updateJobPosting() {
+		return "Success";
+	}
+
+	@RequestMapping("/deleteJobPosting")
+	public String deleteJobPosting() {
+		return "Success";
+	}
+
+	@RequestMapping("/fetchJobPosting")
+	public String fetchJobPosting() {
+		return "Success";
+	}
+
+	@RequestMapping("/jobPostings")
+	public List<JobPosting> getAlljobPostings() {
+		return jobPostingService.getAllJobPostings();
+	}
+	
+	@RequestMapping(method=RequestMethod.GET,value="/jobsearch")
+	public  List<JobPosting> getAllUsersById(@ModelAttribute(name = "loginForm") LoginForm loginForm, Model model){
+		
+		String jobType="*";
+		String jobTitle ="*";
+		String location ="*";
+		if(jobSearchForm.getJobType()!=null && !jobSearchForm.getJobType().equalsIgnoreCase("Select one"))
+			jobType = jobSearchForm.getJobType();
+		if(jobSearchForm.getJobTitle()!=null && !jobSearchForm.getJobTitle().equalsIgnoreCase("Select one"))
+			jobTitle = jobSearchForm.getJobTitle();
+		if(jobSearchForm.getJoblocation()!=null && !jobSearchForm.getJoblocation().equalsIgnoreCase("Select one"))
+			location = jobSearchForm.getJoblocation();
+		
+		List <JobPosting> jobs = jobPostingService.getByJobTitleAndJobTypeAndJobLocation(jobTitle, jobType, location);
+		model.addAttribute("jobs", jobs);
+	}
+}

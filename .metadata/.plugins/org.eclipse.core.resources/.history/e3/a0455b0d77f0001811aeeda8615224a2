@@ -1,0 +1,9 @@
+package edu.umd.intership.service;
+
+import java.util.Arrays;
+
+@Service
+public class HiringManagerService {
+
+	private List<HiringManager> managerList = Arrays.asList(new HiringManager())
+}

@@ -1,0 +1,5 @@
+package edu.umd.internship.configuration;
+
+public class SecurityConfiguration {
+
+}

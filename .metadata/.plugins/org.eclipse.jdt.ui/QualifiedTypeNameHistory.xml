@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.boot.SpringApplication"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="edu.umd.intership.model.User"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="edu.umd.intership.service.UserService"/>
+<fullyQualifiedTypeName name="edu.umd.intership.model.Student"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="edu.umd.intership.model.JobPosting"/>
+<fullyQualifiedTypeName name="edu.umd.intership.service.JobPostingService"/>
+<fullyQualifiedTypeName name="edu.umd.intership.model.JobApplication"/>
+<fullyQualifiedTypeName name="edu.umd.intership.service.JobApplicationService"/>
+<fullyQualifiedTypeName name="edu.umd.intership.model.HiringManager"/>
+<fullyQualifiedTypeName name="edu.umd.intership.service.HiringManagerService"/>
+<fullyQualifiedTypeName name="edu.umd.intership.model.EventRegistration"/>
+<fullyQualifiedTypeName name="edu.umd.intership.service.EventRegistrationService"/>
+<fullyQualifiedTypeName name="edu.umd.intership.model.Event"/>
+<fullyQualifiedTypeName name="edu.umd.intership.service.EventService"/>
+<fullyQualifiedTypeName name="edu.umd.intership.model.Company"/>
+<fullyQualifiedTypeName name="edu.umd.intership.service.CompanyService"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="edu.umd.intership.model.CareerService"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="edu.umd.intership.service.CareerServiceService"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

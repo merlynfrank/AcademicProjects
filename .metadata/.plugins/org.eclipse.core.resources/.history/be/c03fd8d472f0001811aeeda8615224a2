@@ -1,0 +1,23 @@
+package edu.umd.intership.service;
+
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import edu.umd.intership.model.Student;
+import edu.umd.intership.model.User;
+
+@Service
+public class StudentService {
+
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	java.util.Date yourDate = sdf.parse("2019-12-17");
+	private List<Student> studentList = Arrays.asList(new Student("S01", "merlyn","mangalath", "IS", yourDate,
+			"C drive", "merlyn.mangalath@rhsmith.umd.edu", "merlynfr"));
+	public List<Student> getAllStudents(){
+		
+	}
+}

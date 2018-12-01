@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css"></link>
+<link th:href="@{/css/layout.css}" rel="stylesheet" type="text/css"></link>
+<script type="text/javascript" th:src="@{/js/jquery-3.1.0.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+</head>
+<style>
+.footer {
+	position: absolute;
+	right: 37.5%;
+	left: 50%;
+	bottom: 0px;
+	width: 100;
+	background: #3366cc;
+	color: white;
+	text-align: center;
+	margin-left: -150px
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+.collapsible {
+	backgroound-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+}
+
+.active, .collapsible:hover {
+	backgroound-color: #ccc;
+}
+
+.content {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+}
+</style>
+<body>
+	<!-- LogOut button -->
+	<form th:action="@{/login}" th:object="${loginForm}">
+		<div align="right">
+			<button id="logOut" name="logOut" class="btn btn-primary">logOut</button>
+		</div>
+	</form>
+	<br />
+	<br />
+	<div class="container">
+		
+			<fieldset>
+
+				<!-- Form Name -->
+				<legend>Student Profile</legend>
+				<table>
+					<tr>
+						<th>Name :</th>
+						<td><span th:text="${fname}"> ${fname} </span><span
+							th:text="${lname}">${lname}</span></td>
+					</tr>
+					<tr>
+						<th>Major :</th>
+						<td><span th:text="${major}"> ${major} </span></td>
+					</tr>
+					<tr>
+						<th>Graduation :</th>
+						<td><span th:text="${graduation}"> ${graduation} </span></td>
+					</tr>
+					<tr>
+						<th>Email :</th>
+						<td><span th:text="${email}"> ${email} </span></td>
+					</tr>
+				</table>
+
+			</fieldset>
+		
+
+		<script type="text/javascript" th:src="@{/js/jquery-3.1.0.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	</div>
+
+	<!-- Table for Search jobs and Applied jobs -->
+	<div class="container">
+		<legend></legend>
+	</div>
+
+	<div id="exTab2" class="container">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#1" data-toggle="tab">Job Posts</a>
+			</li>
+			<li><a href="#2" data-toggle="tab">Job Applications</a></li>
+			<li><a href="#3" data-toggle="tab">Browse Events</a></li>
+			<li><a href="#4" data-toggle="tab">Registered Events</a></li>
+		</ul>
+
+		<div class="tab-content ">
+			<div class="tab-pane active" id="1">
+				<form class="form-horizontal" th:action="@{/login}"
+			th:object="${loginForm}" method="post">
+					<div class="form-group col-md-4">
+						<label for="jobType">JobType</label> <select id="jobType"
+							class="form-control">
+							<option selected="selected">Select one</option>
+							<option>Analyst</option>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="jobType">JobLocation</label> <select id="joblocation"
+							class="form-control">
+							<option selected="selected">Select one</option>
+							<option>Maryland</option>
+							<option>DC</option>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="jobType">JobTitle</label> <select id="jobTitle"
+							class="form-control">
+							<option selected="selected">Select one</option>
+							<option>Data Analyst</option>
+							<option>Business Analyst</option>
+						</select>
+					</div>
+					<div align="right">
+						<button id="search" name="search" class="btn btn-primary">search</button>
+					</div>
+				</form>
+			</div>
+			<div class="tab-pane" id="2">
+				<h3>Notice the gap between the content and tab after applying a
+					background color</h3>
+			</div>
+			<div class="tab-pane" id="3">
+				<h3>add clearfix to tab-content (see the css)</h3>
+			</div>
+			<div class="tab-pane" id="4">
+				<h3>add clearfix to tab-content (see the css)</h3>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+<div class="footer">&copy; 2016</div>
+
+</html>

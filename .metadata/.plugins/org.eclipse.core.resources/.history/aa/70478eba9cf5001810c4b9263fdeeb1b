@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://thymeleaf.org">
+<head>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css"></link>
+    <link th:href="@{/css/layout.css}" rel="stylesheet" type="text/css"></link>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+</head>
+<script>function retrieveGuests() {
+    var url = '';
+    
+    if ($('#searchSurname').val() != '') {
+        url = url + '/' + $('#searchSurname').val();
+    }
+    
+    $("#resultsBlock").load(url);
+}</script>
+<body>
+ <form>
+    <span class="subtitle">Guest list form</span>
+    <div class="listBlock">
+        <div class="search-block">
+            <input type="text" id="searchSurname" name="searchSurname"/>
+            <br />
+            <label for="searchSurname" th:text="#{search.label}">Search label:</label>
+            <button id="searchButton" name="searchButton" onclick="retrieveGuests()" type="button" 
+                    th:text="#{search.button}">Search button</button>
+        </div>
+        
+        <!-- Results block -->
+        <div id="resultsBlock">
+        
+        </div>
+    </div>
+</form>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+package edu.umd.intership.model;
+
+public class HiringManagers {
+
+	private String empId;
+	private String empFirstName;
+	private String empLastName;
+	private String departmentName;
+	private String designation;
+	private String empEmail;
+	private String empPhoneNo;
+	private String empLocation;
+	private String companyID;
+	private String companyName;
+	private String userId;
+	
+	
+}

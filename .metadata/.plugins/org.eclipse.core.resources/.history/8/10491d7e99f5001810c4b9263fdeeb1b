@@ -1,0 +1,6 @@
+package edu.umd.intership.view.controller;
+
+@Controller
+public class GuestViewController {
+
+}

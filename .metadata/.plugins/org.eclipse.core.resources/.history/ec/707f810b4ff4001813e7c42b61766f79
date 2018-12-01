@@ -1,0 +1,16 @@
+package ui;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import edu.umd.intership.ISInternshipApiApp;
+
+@SpringBootApplication
+public class UIApp {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ISInternshipApiApp.class, args);
+
+	}
+
+}

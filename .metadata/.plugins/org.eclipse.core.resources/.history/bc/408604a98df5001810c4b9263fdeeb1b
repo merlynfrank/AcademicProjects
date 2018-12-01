@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+</head>
+
+<body>
+	<div th:fragment="resultsList('${jobs}')" th:unless="${#lists.isEmpty(jobs)}"
+		id="results-block">
+		<table class="table table-hover table-striped">
+			<thead class="thead-light">
+				<tr>
+					<th>Title</th>
+					<th>Job Type</th>
+					<th>Company Name</th>
+					<th>Work Authorization</th>
+				</tr>
+			</thead>
+			<div th:each="job : ${jobs}">
+				<tr>
+					<td><span th:text="${job.jobTitle}" /></td>
+					<td><span th:text="${job.jobType}" /></td>
+					<td><span th:text="${job.companyName}" /></td>
+					<td><span th:text="${job.workAuthorization}" /></td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<p>
+							Qualification: <span th:text="${job.qualification}" /><br />
+							Description : <span th:text="${job.description}" /><br /> Salary
+							: <span th:text="${job.salary}" /><br /> Expiration date : <span
+								th:text="${job.expirationDate}" /><br />
+						</p>
+					</td>
+				</tr>
+
+
+			</div>
+		</table>
+
+
+	</div>
+</body>
+</html>

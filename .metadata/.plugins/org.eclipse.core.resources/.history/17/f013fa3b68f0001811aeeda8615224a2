@@ -1,0 +1,28 @@
+package edu.umd.intership.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CompanyController {
+
+	@RequestMapping("/createCompanyProfile")
+	public String createCompanyProfile() {
+		return "Success";
+	}
+	
+	@RequestMapping("/updateCompanyProfile")
+	public String updateCompanyProfile() {
+		return "Success";
+	}
+	
+	@RequestMapping("/deleteCompanyProfile")
+	public String deleteCompanyProfile() {
+		return "Success";
+	}
+	
+	@RequestMapping("/fetchCompanyProfile")
+	public String fetchCompanyProfile() {
+		return "Success";
+	}
+}

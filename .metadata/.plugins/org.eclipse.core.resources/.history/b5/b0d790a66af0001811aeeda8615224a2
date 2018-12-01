@@ -1,0 +1,5 @@
+package edu.umd.intership.model;
+
+public class User {
+
+}

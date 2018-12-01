@@ -1,0 +1,19 @@
+package edu.umd.intership.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class StudentController {
+
+	@RequestMapping("/createStudentProfile")
+	public String createStudentProfile() {
+		return "Success";
+	}
+	
+	@RequestMapping("/updateStudentProfile")
+	public String updateStudentProfile() {
+		return "Success";
+	}
+	
+}

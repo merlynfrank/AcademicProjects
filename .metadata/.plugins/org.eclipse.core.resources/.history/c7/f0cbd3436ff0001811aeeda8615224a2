@@ -1,0 +1,29 @@
+package edu.umd.intership.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EventController {
+	
+	@RequestMapping("/createEvent")
+	public String createEvent() {
+		return "Success";
+	}
+	
+	@RequestMapping("/updateEvent")
+	public String updateEvent() {
+		return "Success";
+	}
+	
+	@RequestMapping("/deleteEvent")
+	public String deleteEvent() {
+		return "Success";
+	}
+	
+	@RequestMapping("/fetchEvent")
+	public String fetchEvent() {
+		return "Success";
+	}
+
+}

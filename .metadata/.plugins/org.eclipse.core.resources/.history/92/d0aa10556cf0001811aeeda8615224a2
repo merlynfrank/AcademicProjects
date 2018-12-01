@@ -1,0 +1,16 @@
+package edu.umd.intership.model;
+
+import java.util.Date;
+
+public class Student {
+
+	private String studentId;
+	private String studentFirstName ;
+	private String studentLastName ;
+	private String major ;
+	private Date graduation ;
+	private String resume ;
+	private String studentEmail;
+	private String userId;
+
+}

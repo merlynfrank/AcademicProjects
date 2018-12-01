@@ -1,0 +1,10 @@
+package edu.umd.intership;
+
+public class ISInternshipApiApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

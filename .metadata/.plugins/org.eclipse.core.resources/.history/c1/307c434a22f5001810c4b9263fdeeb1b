@@ -1,0 +1,9 @@
+package edu.umd.intership.form;
+
+public class Snippet {
+	public static void main(String[] args) {
+		<form class="form-horizontal" th:action="@{/login}"
+					th:object="${loginForm}" method="post">
+	}
+}
+

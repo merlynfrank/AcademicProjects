@@ -1,0 +1,12 @@
+package edu.umd.intership.service;
+
+import java.util.Arrays;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class CareerServiceService {
+
+	
+	private List<CareerService> ocs = Arrays.asList(new CareerService("OCS01", "John", "1273918","email", "JohnMalone"));
+}

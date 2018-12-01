@@ -1,0 +1,9 @@
+package edu.umd.intership.model;
+
+public class EventRegistration {
+	private String registrationId ;
+	private String studentId;
+	private String eventId;
+
+
+}

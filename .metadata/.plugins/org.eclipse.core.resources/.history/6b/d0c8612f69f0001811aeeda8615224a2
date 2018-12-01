@@ -1,0 +1,27 @@
+package edu.umd.intership.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestController
+public class JobApplicationController {
+
+	@RequestMapping("/createJobApplication")
+	public String createJobApplication() {
+		return "Success";
+	}
+	
+	@RequestMapping("/updateJobApplication")
+	public String updateJobApplication() {
+		return "Success";
+	}
+	
+	@RequestMapping("/deleteJobApplication")
+	public String deleteJobApplication() {
+		return "Success";
+	}
+	
+	@RequestMapping("/fetchJobApplication")
+	public String fetchJobApplication() {
+		return "Success";
+	}
+}

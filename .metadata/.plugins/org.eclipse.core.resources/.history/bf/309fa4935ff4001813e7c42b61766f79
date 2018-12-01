@@ -1,0 +1,62 @@
+package edu.umd.intership.view.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import edu.umd.intership.form.LoginForm;
+import edu.umd.intership.model.Student;
+import edu.umd.intership.model.User;
+import edu.umd.intership.service.StudentService;
+import edu.umd.intership.service.UserService;
+
+@Controller
+public class LoginViewController {
+
+	@Autowired
+	UserService userService;
+
+	@Autowired
+	StudentService studentService;
+	
+	@RequestMapping("/")
+	public String myView() {
+		return "index";
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String getLoginForm() {
+		return "login";
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(@ModelAttribute(name = "loginForm") LoginForm loginForm, Model model) {
+		String username = loginForm.getUsername();
+		String pasword = loginForm.getPassword();
+		User user = userService.getUserById(username);
+		if (user != null) {
+			if (user.getUserName().equals(username) && user.getPassword().equals(pasword)) {
+				if(user.getUserType().equalsIgnoreCase("Student")) {
+					Student student = studentService.getStudentByUsername(username);
+					model.addAttribute("fname",student.getStudentFirstName());
+					model.addAttribute("lname",student.getStudentLastName());
+					model.addAttribute("major",student.getMajor());
+					model.addAttribute("graduation",student.getGraduation());
+					model.addAttribute("email",student.getStudentEmail());
+					return "redirect :home";
+				}
+				else if(user.getUserType().equalsIgnoreCase("Hiring Manager"))
+					return "managerhome";
+				else if(user.getUserType().equalsIgnoreCase("Career Service"))
+					return "ocshome";
+				
+			}
+			model.addAttribute("invalid_credentials","invalid_credentials");
+			return "login";
+		}
+		model.addAttribute("invalid_credentials","invalid_credentials");
+		return "login";
+	}
+}

@@ -1,0 +1,20 @@
+package edu.umd.intership.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+
+	@RequestMapping
+	public boolean loginUser(String userName, String password) {
+		if(userName.equals(password))
+			return true;
+		return false;
+	}
+	
+	public String createUser(String userName, String password, String userType) {
+		
+		return "Success!";
+	}
+}

@@ -1,0 +1,10 @@
+package edu.umd.intership.model;
+
+public class CareerService {
+	private String ocsID;
+	private String  ocsName;
+	private String ocsPhoneNo;
+	private String ocsEmail;
+	private String userID;
+
+}

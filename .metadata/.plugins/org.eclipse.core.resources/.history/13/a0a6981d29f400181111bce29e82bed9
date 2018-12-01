@@ -1,0 +1,42 @@
+package edu.umd.intership.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import edu.umd.intership.model.HiringManager;
+import edu.umd.intership.service.HiringManagerService;
+
+@RestController
+public class HiringManagerController {
+	
+	@Autowired
+	private HiringManagerService hiringManagerService;
+
+	@RequestMapping("/createHiringManagerProfile")
+	public String createHiringManagerProfile() {
+		return "Success";
+	}
+	
+	@RequestMapping("/updateHiringManagerProfile")
+	public String updateHiringManagerProfile() {
+		return "Success";
+	}
+	
+	@RequestMapping("/deleteHiringManagerProfile")
+	public String deleteHiringManagerProfile() {
+		return "Success";
+	}
+	
+	@RequestMapping("/fetchHiringManagerProfile")
+	public String fetchHiringManagerProfile() {
+		return "Success";
+	}
+	
+	@RequestMapping("/hiringManagers")
+	public List<HiringManager> getAllhiringManagers() {
+		return hiringManagerService.getAllhiringManagers();
+	}
+}

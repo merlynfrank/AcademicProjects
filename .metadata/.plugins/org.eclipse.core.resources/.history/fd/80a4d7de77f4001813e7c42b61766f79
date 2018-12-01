@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css"></link>
+<link th:href="@{/css/layout.css}" rel="stylesheet" type="text/css"></link>
+<script type="text/javascript" th:src="@{/js/jquery-3.1.0.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+</head>
+<style>
+.footer{
+position : absolute;
+right : 37.5% ;
+left : 50%;
+bottom: 0px;
+width : 100;
+background : #3366cc;
+color : white;
+text-align : center;
+margin-left : -150px
+}
+</style>
+<body>
+
+	<br />
+	<br />
+	<div class="container">
+		<form class="form-horizontal" th:action="@{/login}"
+			th:object="${loginForm}" method="post">
+			<fieldset>
+
+				<!-- Form Name -->
+				<legend>Student Profile</legend>
+				<table>
+					<tr>
+						<th>Name :</th>
+						<td><span th:text="${fname}"> ${fname} </span><span
+							th:text="${lname}">${lname}</span></td>
+					</tr>
+					<tr>
+						<th>Major :</th>
+						<td><span th:text="${major}"> ${major} </span></td>
+					</tr>
+					<tr>
+						<th>Graduation :</th>
+						<td><span th:text="${graduation}"> ${graduation} </span></td>
+					</tr>
+					<tr>
+						<th>Email :</th>
+						<td><span th:text="${email}"> ${email} </span></td>
+					</tr>
+				</table>
+
+			</fieldset>
+		</form>
+
+		<script type="text/javascript" th:src="@{/js/jquery-3.1.0.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	</div>
+
+	<!-- Table for Search jobs and Applied jobs -->
+<table>
+<tr>
+		<td><th>Title</th></td>
+		<td><th>Company</th></td>
+		<td></td>
+	</tr>
+	<th:block th:each="job: ${jobs}">
+	
+		<tr th:attr="data-target='#accordian_'+${jobs}" data-toggle="collapse"
+			class="accordian-toggle">
+			<td><span th:text="${job.jobTitle}"></span></td>
+			<td><span th:text="${job.companyName}"></span></td>
+		</tr>
+	</th:block>
+</table>
+
+	<!-- LogOut button -->
+	<form th:action="@{/login}" th:object="${loginForm}">
+		<div align="justify">
+			<button id="logOut" name="logOut" class="btn btn-primary btn-login">logOut</button>
+		</div>
+	</form>
+</body>
+<div class="footer">&copy; 2016</div>
+
+</html>

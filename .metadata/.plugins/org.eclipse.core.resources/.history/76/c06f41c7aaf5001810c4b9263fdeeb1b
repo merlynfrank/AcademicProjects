@@ -1,0 +1,12 @@
+package edu.umd.intership.repository;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import edu.umd.intership.model.JobPosting;
+
+public interface JobPostingRepository extends CrudRepository<JobPosting, String>{
+
+	public List<JobPosting> findByJobTitleAndJobTypeAndJobLocation(String jobTitle, String jobType, String jobLocation);
+}

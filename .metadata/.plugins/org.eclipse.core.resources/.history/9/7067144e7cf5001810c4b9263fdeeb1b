@@ -1,0 +1,95 @@
+ Here is an approach I came across in a blog post: I didn't want to use
+those frameworks so in this section I'm using jQuery to send an AJAX
+request to the server, wait for the response and partially update the
+view (fragment rendering). The Form
+
+<form>
+	<span class="subtitle">Guest list form</span>
+	<div class="listBlock">
+		<div class="search-block">
+			<input type="text" id="searchSurname" name="searchSurname" /> <br />
+			<label for="searchSurname" th:text="#{search.label}">Search
+				label:</label>
+			<button id="searchButton" name="searchButton"
+				onclick="retrieveGuests()" type="button" th:text="#{search.button}">Search
+				button</button>
+		</div>
+
+		<!-- Results block -->
+		<div id="resultsBlock"></div>
+	</div>
+</form>
+This form contains an input text with a search string (searchSurname)
+that will be sent to the server. There's also a region (resultsBlock
+div) which will be updated with the response received from the server.
+
+When the user clicks the button, the retrieveGuests() function will be
+invoked. function retrieveGuests() { var url =
+'/th-spring-integration/spring/guests'; if ($('#searchSurname').val() !=
+'') { url = url + '/' + $('#searchSurname').val(); }
+
+$("#resultsBlock").load(url); } The jQuery load function makes a request
+to the server at the specified url and places the returned HTML into the
+specified element (resultsBlock div). If the user enters a search
+string, it will search for all guests with the specified surname.
+Otherwise, it will return the complete guest list. These two requests
+will reach the following controller request mappings:
+
+@RequestMapping(value = "/guests/{surname}", method = RequestMethod.GET)
+public String showGuestList(Model model, @PathVariable("surname") String
+surname) { model.addAttribute("guests",
+hotelService.getGuestsList(surname)); return "results :: resultsList"; }
+
+@RequestMapping(value = "/guests", method = RequestMethod.GET) public
+String showGuestList(Model model) { model.addAttribute("guests",
+hotelService.getGuestsList()); return "results :: resultsList"; } Since
+Spring is integrated with Thymeleaf, it will now be able to return
+fragments of HTML. In the above example, the return string "results ::
+resultsList" is referring to a fragment named resultsList which is
+located in the results page. Let's take a look at this results page:
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+</head>
+
+<body>
+	<div th:fragment="resultsList" th:unless="${#lists.isEmpty(jobs)}"
+		id="results-block">
+		<table class="table table-hover table-striped">
+			<thead class="thead-light">
+				<tr>
+					<th>Title</th>
+					<th>Job Type</th>
+					<th>Company Name</th>
+					<th>Work Authorization</th>
+				</tr>
+			</thead>
+			<div th:each="job : ${jobs}">
+				<tr>
+					<td><span th:text="${job.jobTitle}" /></td>
+					<td><span th:text="${job.jobType}" /></td>
+					<td><span th:text="${job.companyName}" /></td>
+					<td><span th:text="${job.workAuthorization}" /></td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<p>
+							Qualification: <span th:text="${job.qualification}" /><br />
+							Description : <span th:text="${job.description}" /><br /> Salary
+							: <span th:text="${job.salary}" /><br /> Expiration date : <span
+								th:text="${job.expirationDate}" /><br />
+						</p>
+					</td>
+				</tr>
+
+
+			</div>
+		</table>
+
+
+	</div>
+</body>
+</html>

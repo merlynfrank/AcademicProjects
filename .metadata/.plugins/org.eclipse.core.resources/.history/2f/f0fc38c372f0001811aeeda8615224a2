@@ -1,0 +1,16 @@
+package edu.umd.intership.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import edu.umd.intership.model.Student;
+
+@Service
+public class StudentService {
+
+	private List<Student> studentList = ;
+	public List<Student> getAllStudents(){
+		
+	}
+}

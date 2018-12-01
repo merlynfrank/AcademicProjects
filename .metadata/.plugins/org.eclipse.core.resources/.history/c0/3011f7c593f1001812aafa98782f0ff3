@@ -1,0 +1,5 @@
+package edu.umd.intership.repository;
+
+public interface UserRepository {
+
+}

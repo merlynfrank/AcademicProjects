@@ -1,0 +1,38 @@
+package edu.umd.intership.view.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import edu.umd.intership.form.JobSearchForm;
+import edu.umd.intership.model.JobPosting;
+import edu.umd.intership.service.JobPostingService;
+
+@Controller
+public class JobSearchViewController {
+
+	@Autowired
+	JobPostingService jobPostingService;
+	
+	@RequestMapping(value = "/jobsearch", method = RequestMethod.POST)
+	private String searchJob(@ModelAttribute(name = "jobSearchForm") JobSearchForm jobSearchForm, Model model) {
+		String jobType="*";
+		String jobTitle ="*";
+		String location ="*";
+		if(jobSearchForm.getJobType()!=null && !jobSearchForm.getJobType().equalsIgnoreCase("Select one"))
+			jobType = jobSearchForm.getJobType();
+		if(jobSearchForm.getJobTitle()!=null && !jobSearchForm.getJobTitle().equalsIgnoreCase("Select one"))
+			jobTitle = jobSearchForm.getJobTitle();
+		if(jobSearchForm.getLocation()!=null && !jobSearchForm.getLocation().equalsIgnoreCase("Select one"))
+			location = jobSearchForm.getLocation();
+		
+		List <JobPosting> jobs = jobPostingService.getByJobTitleAndJobTypeAndJobLocation(jobTitle, jobType, location);
+		model.addAttribute("jobs", jobs);
+		return "Jobs Found!";
+	}
+}
